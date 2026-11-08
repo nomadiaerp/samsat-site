@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sam Sat Rastreadores — monitoramento veicular com acesso web e aplicativo, atendimento personalizado desde 2016.">
+  <meta name="theme-color" content="#08265d">
+  <title>Sam Sat Rastreadores | Segurança e monitoramento veicular</title>
+  <link rel="icon" type="image/png" href="assets/logo-samsat.png">
+  <style>
+    :root{--navy:#08265d;--blue:#087db8;--cyan:#19b6cf;--ink:#14233d;--muted:#64748b;--pale:#eef7fc;--white:#fff;--line:#dce8f1}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+    a{color:inherit;text-decoration:none} .wrap{width:min(1140px,92%);margin:auto}
+    .topbar{background:#061b45;color:#dceeff;font-size:13px;padding:8px 0}.topbar .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #e8eef5;box-shadow:0 5px 22px #0a28500a}
+    .nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px}.brand img{width:70px;height:70px;object-fit:contain}.brand strong{font-size:20px;color:var(--navy);letter-spacing:.4px;line-height:1.1}.brand small{display:block;font-size:10px;letter-spacing:3px;color:var(--blue);margin-top:5px}
+    nav{display:flex;align-items:center;gap:25px;font-size:14px;font-weight:700;color:#31415b}nav a:hover{color:var(--blue)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 19px;border-radius:10px;font-weight:800;font-size:14px;transition:.2s;border:1px solid transparent;cursor:pointer}
+    .btn-primary{background:linear-gradient(120deg,var(--blue),var(--cyan));color:white;box-shadow:0 9px 20px #087db833}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 24px #087db844}
+    .btn-outline{border-color:#b9d5e6;color:var(--navy);background:#fff}.btn-dark{background:var(--navy);color:#fff}
+    .hero{position:relative;overflow:hidden;background:radial-gradient(circle at 80% 25%,#1c82bd 0,#0b4b91 25%,#08265d 62%,#061b45 100%);color:white;padding:76px 0 82px}
+    .hero:after{content:"";position:absolute;width:540px;height:540px;border:1px solid #ffffff22;border-radius:50%;right:-100px;top:-170px;box-shadow:0 0 0 45px #ffffff08,0 0 0 95px #ffffff06}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:50px;align-items:center}
+    .eyebrow{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:#8ee9f2;font-weight:900}.hero h1{font-size:clamp(36px,5vw,58px);line-height:1.08;margin:15px 0 20px;letter-spacing:-1.5px}.hero p{font-size:18px;color:#d8eaff;max-width:590px;margin:0 0 28px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.hero .btn-outline{background:#ffffff12;border-color:#ffffff70;color:white}
+    .hero-art{min-height:340px;display:flex;align-items:center;justify-content:center;position:relative}.radar{width:min(390px,90%);aspect-ratio:1;border-radius:50%;border:1px solid #8ee9f277;background:radial-gradient(circle,#0c77a855 0 8%,#0a4b8a66 9% 38%,#ffffff08 39% 40%,transparent 41%);display:grid;place-items:center;position:relative;box-shadow:0 0 65px #25b9df30}.radar:before,.radar:after{content:"";position:absolute;border:1px solid #8ee9f255;border-radius:50%;inset:12%}.radar:after{inset:25%}.radar-center{font-size:90px;filter:drop-shadow(0 10px 18px #001b3d)}.pin{position:absolute;background:#fff;color:var(--navy);padding:9px 13px;border-radius:9px;font-size:12px;font-weight:900;box-shadow:0 8px 20px #001b3d55}.pin.one{top:15%;right:-2%}.pin.two{bottom:16%;left:-4%}
+    .trust{background:#fff;box-shadow:0 10px 30px #092c5010;position:relative;margin-top:-25px;z-index:2;border-radius:14px;padding:22px 28px;display:grid;grid-template-columns:repeat(3,1fr);gap:15px;text-align:center}.trust strong{display:block;color:var(--navy);font-size:23px}.trust span{font-size:13px;color:var(--muted)}
+    section{padding:78px 0}.section-head{text-align:center;max-width:700px;margin:0 auto 38px}.section-head .eyebrow{color:var(--blue)}h2{font-size:clamp(28px,3vw,38px);line-height:1.18;color:var(--navy);margin:9px 0 13px;letter-spacing:-.7px}.section-head p{color:var(--muted);margin:0}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.feature{border:1px solid var(--line);border-radius:15px;padding:23px;background:#fff;transition:.2s}.feature:hover{transform:translateY(-4px);box-shadow:0 15px 30px #0b315010;border-color:#b8ddec}.ico{width:45px;height:45px;border-radius:12px;background:#e8f7fc;color:var(--blue);display:grid;place-items:center;font-size:22px;margin-bottom:15px}.feature h3{margin:0 0 6px;color:var(--navy);font-size:17px}.feature p{margin:0;color:var(--muted);font-size:14px}
+    .app-section{background:var(--pale)}.app-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center}.phone-stage{display:flex;justify-content:center;align-items:center;min-height:470px;position:relative}.phone{width:230px;height:430px;background:#071a3e;border:8px solid #0c1730;border-radius:34px;padding:10px;box-shadow:0 25px 55px #08265d30;transform:rotate(-5deg);position:relative}.screen{height:100%;border-radius:23px;background:linear-gradient(160deg,#f7fcff,#e8f4fb);overflow:hidden;padding:15px 12px;color:var(--navy)}.notch{width:75px;height:13px;background:#0c1730;border-radius:0 0 10px 10px;margin:-10px auto 13px}.screen-head{font-size:10px;font-weight:900;display:flex;justify-content:space-between}.screen-title{font-size:16px;font-weight:900;margin:15px 0 8px}.mapmock{height:155px;border-radius:12px;background:linear-gradient(35deg,#d4e9dd 0 25%,#e7eee2 26% 45%,#d4e7f0 46% 58%,#e9eee3 59%);position:relative;overflow:hidden}.mapmock:before{content:"";position:absolute;width:160%;height:3px;background:#fff;transform:rotate(-30deg);top:55px;left:-30px;box-shadow:0 26px 0 #fff,0 58px 0 #fff}.mapmock:after{content:"";position:absolute;width:10px;height:10px;border:4px solid white;background:#0788c5;border-radius:50%;left:55%;top:48%}.carlabel{background:#fff;border-radius:9px;padding:9px;margin-top:10px;font-size:10px;box-shadow:0 3px 10px #08265d12}.carlabel b{display:block;font-size:11px}.minirow{display:flex;gap:7px;margin-top:9px}.minirow span{flex:1;background:#fff;border-radius:8px;padding:9px 4px;text-align:center;font-size:9px;font-weight:800}.float-card{position:absolute;background:#fff;border-radius:12px;padding:13px 16px;box-shadow:0 12px 30px #08265d20;font-size:12px;font-weight:800;color:var(--navy)}.float-card.a{left:3%;top:18%}.float-card.b{right:0;bottom:17%}.app-copy h2{text-align:left}.app-copy>p{color:var(--muted)}.app-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:23px 0}.app-points div{font-size:14px;font-weight:700;color:#30415a}.check{color:#0798b9;margin-right:7px}.store-buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .pricing{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:850px;margin:auto}.price-card{border:1px solid var(--line);border-radius:18px;padding:30px;background:#fff}.price-card.featured{border:2px solid var(--blue);box-shadow:0 15px 35px #087db81a}.price-card .tag{font-size:11px;color:var(--blue);font-weight:900;letter-spacing:1.5px;text-transform:uppercase}.price{font-size:42px;color:var(--navy);font-weight:900;letter-spacing:-1px;margin:12px 0 2px}.price small{font-size:15px;letter-spacing:0;color:var(--muted);font-weight:600}.price-card p{color:var(--muted);font-size:14px}.price-card ul{padding-left:18px;color:#40516a;font-size:14px;margin:18px 0 24px}.payment-note{max-width:850px;margin:18px auto 0;background:#f1f8fc;border-radius:12px;padding:17px 20px;color:#40516a;font-size:14px}
+    .about{background:#08265d;color:white}.about .section-head h2{color:white}.about .section-head p{color:#c9dcf3}.about-box{max-width:820px;margin:auto;text-align:center;font-size:18px;color:#e0edfb}.about-box strong{color:#8ee9f2}
+    .locations{display:grid;grid-template-columns:1fr 1fr;gap:18px}.location{border:1px solid var(--line);border-radius:15px;padding:24px}.location h3{margin:0 0 7px;color:var(--navy)}.location p{margin:5px 0;color:var(--muted);font-size:14px}.location .city{color:var(--blue);font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:1px}
+    .contact{background:var(--pale)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:start}.contact-card{background:#fff;border-radius:16px;padding:26px;border:1px solid var(--line)}.contact-item{display:flex;gap:13px;margin:18px 0;align-items:flex-start}.contact-item .ico{flex-shrink:0;margin:0}.contact-item b{display:block;color:var(--navy)}.contact-item span{font-size:14px;color:var(--muted);overflow-wrap:anywhere}.contact-cta{background:linear-gradient(145deg,#0b4b91,#08265d);color:white;border-radius:16px;padding:30px}.contact-cta h3{font-size:25px;margin:0 0 10px}.contact-cta p{color:#d8eaff}
+    footer{background:#061b45;color:#d4e4f5;padding:27px 0;font-size:13px}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}.footer-inner strong{color:white}
+    .mobile-menu{display:none}
+    @media(max-width:850px){nav{gap:13px;font-size:12px}.nav>.btn{display:none}.hero-grid,.app-grid,.contact-grid{grid-template-columns:1fr}.hero{padding:58px 0}.hero-art{min-height:280px}.features{grid-template-columns:repeat(2,1fr)}.app-grid{gap:15px}.app-copy{order:-1}.phone-stage{min-height:450px}.trust{margin-top:-10px}}
+    @media(max-width:600px){.topbar .wrap{justify-content:center;text-align:center}.nav{height:72px}.brand img{width:58px;height:58px}.brand strong{font-size:17px}nav{display:none}.hero h1{font-size:39px}.hero p{font-size:16px}.trust{grid-template-columns:1fr;padding:17px}.features,.pricing,.locations{grid-template-columns:1fr}section{padding:58px 0}.app-points{grid-template-columns:1fr}.phone{width:215px;height:405px}.float-card.a{left:0}.float-card.b{right:-2%}.price{font-size:38px}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="wrap"><span>Monitoramento veicular com atendimento próximo e personalizado</span><span>Desde 2016 • Empresa familiar</span></div></div>
+  <header><div class="wrap nav">
+    <a class="brand" href="#inicio"><img src="assets/logo-samsat.png" alt="Logo Sam Sat Rastreadores"><span><strong>SAM SAT</strong><small>RASTREADORES</small></span></a>
+    <nav><a href="#recursos">Recursos</a><a href="#aplicativo">Aplicativo</a><a href="#planos">Planos</a><a href="#instalacao">Instalação</a><a href="#contato">Contato</a></nav>
+    <a class="btn btn-primary" href="https://family.systemsatx.com.br/Login/" target="_blank" rel="noopener">Acessar rastreamento ↗</a>
+  </div></header>
+
+  <main>
+    <section class="hero" id="inicio"><div class="wrap hero-grid">
+      <div><div class="eyebrow">Sua tranquilidade em movimento</div><h1>Seu veículo sempre ao seu alcance.</h1><p>Monitore carros e motos pela internet ou pelo aplicativo SSX MOBILE. Mais praticidade, controle e informação para acompanhar seu veículo onde estiver.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="https://family.systemsatx.com.br/Login/" target="_blank" rel="noopener">Acessar minha plataforma ↗</a><a class="btn btn-outline" href="#planos">Conhecer os planos</a></div>
+      </div>
+      <div class="hero-art"><div class="radar"><div class="radar-center">📍</div><div class="pin one">● Veículo localizado</div><div class="pin two">✓ Monitoramento ativo</div></div></div>
+    </div></section>
+    <div class="wrap trust"><div><strong>Desde 2016</strong><span>Experiência e confiança</span></div><div><strong>Web + App</strong><span>Acesso de onde estiver</span></div><div><strong>R$ 65,00</strong><span>Mensalidade fixa</span></div></div>
+
+    <section id="recursos"><div class="wrap"><div class="section-head"><div class="eyebrow">Tecnologia para o seu dia a dia</div><h2>Recursos para acompanhar e gerenciar seu veículo</h2><p>Tenha informações importantes na palma da mão, com uma plataforma prática e fácil de acessar.</p></div>
+      <div class="features">
+        <article class="feature"><div class="ico">🌐</div><h3>Acesso web e app</h3><p>Acompanhe pelo navegador ou pelo aplicativo SSX MOBILE.</p></article>
+        <article class="feature"><div class="ico">🔑</div><h3>Alerta de ignição</h3><p>Receba informação sobre eventos de ignição do veículo.</p></article>
+        <article class="feature"><div class="ico">🔒</div><h3>Bloqueio e desbloqueio</h3><p>Envie comandos de bloqueio e desbloqueio pelo aplicativo, conforme compatibilidade da instalação.</p></article>
+        <article class="feature"><div class="ico">🛡️</div><h3>Cerca eletrônica</h3><p>Configure uma área e acompanhe alertas de entrada ou saída.</p></article>
+        <article class="feature"><div class="ico">📍</div><h3>Localização em tempo real</h3><p>Consulte a posição atualizada do veículo na plataforma.</p></article>
+        <article class="feature"><div class="ico">🕘</div><h3>Histórico de 90 dias</h3><p>Consulte o histórico de posições e deslocamentos disponíveis por até 90 dias.</p></article>
+        <article class="feature"><div class="ico">🗺️</div><h3>Integração com mapas</h3><p>Visualize a localização integrada à rede de mapas.</p></article>
+        <article class="feature"><div class="ico">💬</div><h3>Compartilhamento via WhatsApp</h3><p>Compartilhe a posição do veículo de forma prática.</p></article>
+        <article class="feature"><div class="ico">🧭</div><h3>Rota até o veículo</h3><p>Utilize a roteirização para chegar até a localização do veículo.</p></article>
+      </div>
+    </div></section>
+
+    <section class="app-section" id="aplicativo"><div class="wrap app-grid">
+      <div class="phone-stage">
+        <div class="float-card a">📡 Posição atualizada</div>
+        <div class="phone"><div class="screen"><div class="notch"></div><div class="screen-head"><span>SSX MOBILE</span><span>● ONLINE</span></div><div class="screen-title">Meus veículos</div><div class="mapmock"></div><div class="carlabel"><b>Meu veículo</b>Localização disponível • Agora</div><div class="minirow"><span>📍<br>Localizar</span><span>🔒<br>Bloquear</span><span>🕘<br>Histórico</span></div><div class="carlabel" style="margin-top:12px">🛡️ Cerca eletrônica <b>Configurar área</b></div></div></div>
+        <div class="float-card b">✓ Histórico de posições</div>
+      </div>
+      <div class="app-copy"><div class="eyebrow">SSX MOBILE</div><h2>Seu monitoramento na palma da mão</h2><p>O aplicativo SSX MOBILE permite consultar seus veículos e utilizar os recursos disponíveis na plataforma diretamente pelo smartphone. A imagem ao lado é uma ilustração demonstrativa da experiência de uso, não uma captura oficial do aplicativo.</p>
+        <div class="app-points"><div><span class="check">✓</span>Visualização no mapa</div><div><span class="check">✓</span>Comandos pelo app</div><div><span class="check">✓</span>Consulta de histórico</div><div><span class="check">✓</span>Compartilhamento de posição</div></div>
+        <div class="store-buttons"><a class="btn btn-dark" href="https://play.google.com/store/search?q=SSX%20MOBILE&c=apps" target="_blank" rel="noopener">▶ Google Play</a><a class="btn btn-outline" href="https://apps.apple.com/br/search?term=SSX%20MOBILE" target="_blank" rel="noopener"> App Store</a></div>
+        <p style="font-size:12px;margin-top:12px">Os botões direcionam à busca pelo nome SSX MOBILE nas lojas. Confirme o aplicativo oficial antes de instalar.</p>
+      </div>
+    </div></section>
+
+    <section id="planos"><div class="wrap"><div class="section-head"><div class="eyebrow">Simples e transparente</div><h2>Valores e condições</h2><p>Comece com o equipamento instalado e tenha uma mensalidade fixa para utilizar o serviço de monitoramento.</p></div>
+      <div class="pricing">
+        <article class="price-card featured"><div class="tag">Instalação + equipamento</div><div class="price">A partir de R$ 250<small>,00</small></div><p>Valor inicial do equipamento e instalação.</p><ul><li>Equipamento rastreador</li><li>Instalação em ponto indicado</li><li>Configuração para acesso à plataforma</li></ul><a class="btn btn-primary" href="https://wa.me/5511964305189?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20a%20instala%C3%A7%C3%A3o%20do%20rastreador." target="_blank" rel="noopener">Solicitar instalação</a></article>
+        <article class="price-card"><div class="tag">Mensalidade</div><div class="price">R$ 65<small>,00 / mês</small></div><p>Valor mensal fixo pelo serviço de monitoramento.</p><ul><li>Acesso web e aplicativo</li><li>Recursos da plataforma</li><li>Cobrança mensal por boleto enviado por e-mail</li></ul><a class="btn btn-dark" href="https://wa.me/5511964305189?text=Ol%C3%A1%2C%20gostaria%20de%20contratar%20o%20monitoramento%20veicular." target="_blank" rel="noopener">Quero contratar</a></article>
+      </div>
+      <div class="payment-note"><strong>Como funciona o pagamento:</strong> o valor do equipamento e da instalação é pago no ato da instalação. A primeira mensalidade será cobrada somente no mês seguinte, por boleto bancário enviado ao seu e-mail.</div>
+    </div></section>
+
+    <section class="about"><div class="wrap"><div class="section-head"><div class="eyebrow">Quem somos</div><h2>Uma empresa familiar, próxima de você.</h2><p>Atendimento personalizado e compromisso com cada cliente.</p></div><div class="about-box">Desde <strong>2016</strong>, a Sam Sat Rastreadores é uma empresa familiar com foco em nossos clientes e no atendimento personalizado para as necessidades de cada um. Nosso objetivo é oferecer tecnologia de monitoramento com orientação e suporte próximos, desde a instalação até o uso da plataforma.</div></div></section>
+
+    <section id="instalacao"><div class="wrap"><div class="section-head"><div class="eyebrow">Onde instalar</div><h2>Pontos de instalação</h2><p>As instalações são realizadas nos pontos indicados abaixo. Entre em contato para combinar o atendimento.</p></div>
+      <div class="locations">
+        <article class="location"><div class="city">Mogi das Cruzes • SP</div><h3>Trezentos Moto Peças e Acessórios Ltda.</h3><p>Av. Ricieri José Marcatto, 2371</p><p>Vila Suissa — Mogi das Cruzes / SP</p><a class="btn btn-outline" style="margin-top:12px" href="https://www.google.com/maps/search/?api=1&query=Av.+Ricieri+Jos%C3%A9+Marcatto%2C+2371%2C+Mogi+das+Cruzes" target="_blank" rel="noopener">Ver localização ↗</a></article>
+        <article class="location"><div class="city">Arujá • SP</div><h3>Diddy Moto Peças e Acessórios Ltda.</h3><p>Av. Armando Colângelo, 1785</p><p>Parque Rodrigo Barreto — Arujá / SP</p><a class="btn btn-outline" style="margin-top:12px" href="https://www.google.com/maps/search/?api=1&query=Av.+Armando+Col%C3%A2ngelo%2C+1785%2C+Aruj%C3%A1" target="_blank" rel="noopener">Ver localização ↗</a></article>
+      </div>
+    </div></section>
+
+    <section class="contact" id="contato"><div class="wrap"><div class="section-head"><div class="eyebrow">Fale com a Sam Sat</div><h2>Estamos prontos para ajudar</h2><p>Entre em contato para contratar, agendar uma instalação ou receber suporte.</p></div>
+      <div class="contact-grid"><div class="contact-card">
+        <div class="contact-item"><div class="ico">✉️</div><div><b>E-mail</b><span><a href="mailto:SamSat.rastreadores@gmail.com">SamSat.rastreadores@gmail.com</a></span></div></div>
+        <div class="contact-item"><div class="ico">☎️</div><div><b>Administrativo / Financeiro</b><span><a href="tel:+5511964305189">(11) 96430-5189</a></span></div></div>
+        <div class="contact-item"><div class="ico">🔧</div><div><b>Suporte técnico</b><span><a href="tel:+5511986753092">(11) 98675-3092</a></span></div></div>
+      </div><div class="contact-cta"><h3>Precisa de ajuda ou quer contratar?</h3><p>Converse com nossa equipe pelo WhatsApp. Será um prazer atender você.</p><a class="btn btn-primary" href="https://wa.me/5511964305189?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Sam%20Sat%20Rastreadores." target="_blank" rel="noopener">Falar com o administrativo ↗</a><br><a class="btn btn-outline" style="margin-top:12px;background:transparent;color:white;border-color:#ffffff70" href="https://wa.me/5511986753092?text=Ol%C3%A1%2C%20preciso%20de%20suporte%20t%C3%A9cnico." target="_blank" rel="noopener">Falar com suporte técnico ↗</a></div></div>
+    </div></section>
+  </main>
+  <footer><div class="wrap footer-inner"><div><strong>SAM SAT RASTREADORES</strong><br>Monitoramento veicular • Desde 2016</div><div>© <span id="year"></span> Sam Sat Rastreadores. Todos os direitos reservados.</div><div><a href="https://tracking.systemsatx.com.br/Pessoa" target="_blank" rel="noopener">Acesso do administrador ↗</a></div></div></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>

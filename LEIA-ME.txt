@@ -1,0 +1,18 @@
+SAM SAT RASTREADORES — SITE
+
+Conteúdo:
+- index.html: página institucional responsiva
+- assets/logo-samsat.png: logo enviado
+
+COMO VISUALIZAR:
+Abra o arquivo index.html em um navegador. Para publicar, envie index.html e a pasta assets inteira para a hospedagem, mantendo a estrutura.
+
+DOMÍNIO:
+O domínio samsatrastreadores.com.br permanece na Registro.br. Para publicar, será necessário contratar/usar uma hospedagem e apontar os DNS (ou configurar os registros A/CNAME) conforme os dados fornecidos pela hospedagem. Depois, ative o HTTPS/SSL no painel da hospedagem.
+
+PENDÊNCIAS PARA VERSÃO FINAL:
+1. Confirmar os links oficiais do SSX MOBILE na Google Play e App Store. Por enquanto, os botões fazem uma busca pelo nome do app nas lojas.
+2. A imagem do celular no bloco do aplicativo é uma ilustração demonstrativa, não captura oficial do SSX MOBILE.
+3. Confirmar se o valor inicial de R$ 250,00 inclui equipamento e instalação para todos os tipos de veículo.
+
+A página já contém os links de acesso do cliente e do administrador informados pelo proprietário.
